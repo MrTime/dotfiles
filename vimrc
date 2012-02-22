@@ -1,3 +1,6 @@
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 if has("autocmd")
   filetype on
   filetype indent on
