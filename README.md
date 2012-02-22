@@ -1,6 +1,6 @@
 # Clone git repository
 
-  git clone http://github.com/username/dotvim.git ~/.vim
+  git clone git@github.com:MrTime/dotfiles.git ~/.vim
 
 # create symbol links
 
