@@ -5,6 +5,7 @@
 # create symbol links
 
   ln -s ~/.vim/vimrc ~/.vimrc
+  ln -s ~/.vim/irbrc ~/.irbrc
 
 # Install plugins
 
