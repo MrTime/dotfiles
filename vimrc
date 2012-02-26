@@ -10,7 +10,7 @@ if has("autocmd")
   autocmd FileType ruby,thor,haml,css,eruby,yaml,html,sass,cucumber,coffee setlocal ai ts=2 sw=2 sts=2 et
   autocmd FileType javascript setlocal ai ts=4 sw=4 sts=4 noet
 
-  autocmd BufRead,BufNewFile *.thor,Rakefile,Gemfile,Guardfile set filetype=ruby
+  autocmd BufRead,BufNewFile *.thor,Rakefile,Gemfile,Guardfile,config.ru set filetype=ruby
   autocmd BufWritePost .vimrc source $MYVIMRC
 endif
 
