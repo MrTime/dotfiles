@@ -12,7 +12,10 @@ if has("autocmd")
 
   autocmd BufRead,BufNewFile *.thor,Rakefile,Gemfile,Guardfile,config.ru set filetype=ruby
   autocmd BufWritePost .vimrc source $MYVIMRC
+  autocmd BufReadPost fugirive://* set bufhidden=delete
 endif
+
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 set number
 set hidden
