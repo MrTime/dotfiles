@@ -95,3 +95,8 @@ set nowrap
 set mouse=a
 "map <S-Insert> <MiddleMouse>
 "map! <S-Insert> <MiddleMouse>
+"
+set tags+=~/.vim/tags/giggle_gems
+" build tags of your own project with Ctrl-F12
+map <C-F12> :!ctags -R .<CR>
+
