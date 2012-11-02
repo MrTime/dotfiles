@@ -96,7 +96,25 @@ set mouse=a
 "map <S-Insert> <MiddleMouse>
 "map! <S-Insert> <MiddleMouse>
 "
-set tags+=~/.vim/tags/giggle_gems
+
+function MakeRVMGemsetTags ()
+  let gemset = substitute(system('rvm current'), "\n","","")
+  let full_gemset_tags_path = $HOME."/.vim/tags/".gemset
+
+  if !filereadable(full_gemset_tags_path)
+    let gems_path = $GEM_HOME."/gems"
+    let ctags_cmd = "ctags -f ".full_gemset_tags_path." -R ".gems_path
+    execute "!".ctags_cmd
+  endif
+
+  execute "set tags+=".full_gemset_tags_path
+  return full_gemset_tags_path
+endfunction
+
 " build tags of your own project with Ctrl-F12
 map <C-F12> :!ctags -R .<CR>
 
+" build tags of your current gemset with Ctrl-F11
+map <C-F11> :call MakeRVMGemsetTags()<CR>
+
+call MakeRVMGemsetTags()
