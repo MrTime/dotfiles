@@ -117,4 +117,6 @@ map <C-F12> :!ctags -R .<CR>
 " build tags of your current gemset with Ctrl-F11
 map <C-F11> :call MakeRVMGemsetTags()<CR>
 
-call MakeRVMGemsetTags()
+if filereadable('.rvmrc')
+  call MakeRVMGemsetTags()
+endif
