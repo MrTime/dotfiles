@@ -112,7 +112,7 @@ function MakeRVMGemsetTags ()
 endfunction
 
 " build tags of your own project with Ctrl-F12
-map <C-F12> :!ctags -R .<CR>
+map <C-F12> :!rm tags &&  ctags -f tags -R .<CR>
 
 " build tags of your current gemset with Ctrl-F11
 map <C-F11> :call MakeRVMGemsetTags()<CR>
